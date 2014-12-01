@@ -1,10 +1,18 @@
 function parseQueryString (url) {
-	a = url.split(/[?&]/);
-	a = decodeURIComponent(url);
-	a.shift() //drop url host
-	result = [];
-	a.forEach(function(r){
-		result.push(r.split(/=/));
-	});
-	return result
+  if (url.indexOf('?') === -1){
+    result = []
+    return result
+  }else{
+  var x = url.split('?')[1];
+  x = x.split('&');
+  
+  var v = [];
+  
+  x.forEach(function(y){
+    var k = y.replace('%20', ' ');
+    var c = k.split('=');
+    v.push(c);
+  })
+  return v;
+  }
 }
