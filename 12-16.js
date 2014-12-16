@@ -23,6 +23,9 @@ function countIslands (mapStr) {
         else if (i === 0 && j === 0){
           counter++;
         } 
+        else if(i > 0 && array[i-1][j] === "0" &&  j > 0 && array[i][j-1] === "0" && array[i-1][j-1] !== "0"  ){
+          counter--;
+        }
       } 
     }
   } 
