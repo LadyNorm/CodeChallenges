@@ -10,7 +10,7 @@ function lookAndSay(n){
   storage.push(0);
   storage.push(1);
   var num = 1;
-    for (var i = 0; i < 30; i++) {
+    for (var i = 0; i < n; i++) {
         num = looking(num);
         storage.push(num);
     }
